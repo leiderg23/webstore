@@ -1,0 +1,188 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #000; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto principal blanco */
+    overflow-x: hidden; /* Evitar el scroll horizontal */
+}
+
+header {
+    background-color: #1f1f1f; /* Fondo oscuro para el encabezado */
+    color: #e0e0e0; /* Texto blanco en el encabezado */
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 40px 0 20px 0; /* Separación mayor del título respecto al encabezado */
+    font-weight: 700;
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #e0e0e0; /* Blanco en enlaces */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.container {
+    width: 80%;
+    margin: 120px auto 50px auto;
+    padding: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff; /* Blanco para títulos */
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #ffffff; /* Blanco para subtítulos */
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.item img {
+    width: 400px;
+    height: auto;
+    margin-right: 40px;
+    transition: transform 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+}
+
+.item .text {
+    flex: 1;
+    font-size: 18px;
+    color: #d0d0d0; /* Gris claro para el texto de las características */
+}
+
+.item.reverse {
+    flex-direction: row-reverse;
+}
+
+.item .text h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.spec-box {
+    background-color: #000000; /* Fondo oscuro para las especificaciones */
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+#specs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#comprar-form {
+    display: inline-block;
+    background-color: #1f1f1f; /* Fondo oscuro para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#comprar-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+#comprar-form select, #comprar-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+#comprar-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0e0e0; /* Fondo claro para el botón */
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#comprar-form button:hover {
+    background-color: #c0c0c0; /* Fondo más oscuro en hover */
+}
+
+footer {
+    background-color: #1f1f1f; /* Fondo oscuro para el pie de página */
+    color: #e0e0e0; /* Texto blanco en el pie de página */
+    padding: 20px;
+    text-align: center;
+}
+
+.button-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.button-fixed.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Inicialmente oculto */
+}
+
+.fade-in-visible {
+    animation: fadeIn 1s ease-out forwards; /* Mantiene el estado final */
+}
+

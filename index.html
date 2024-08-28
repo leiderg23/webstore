@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPods Pro 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>AirPods Pro 2</h1>
+        <nav>
+            <ul>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#especificaciones">Especificaciones</a></li>
+                <li><a href="#comprar">Comprar</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="intro" class="container">
+        <h2 class="fade-in">El sonido de la perfección</h2>
+        <p class="fade-in">Descubre la experiencia sonora definitiva con los nuevos AirPods Pro 2.</p>
+    </section>
+
+    <section id="caracteristicas" class="container">
+        <div class="item fade-in">
+            <img src="images/imagen1.jpeg" alt="Cancelación de Ruido" class="image">
+            <div class="text">
+                <h3>Cancelación de Ruido Activa</h3>
+                <p>Sumérgete en tu música sin distracciones.</p>
+                <p>La cancelación de ruido activa de los AirPods Pro 2 te permite bloquear el sonido exterior para que puedas disfrutar de tu música, podcasts o llamadas sin interrupciones. Ya sea en un avión, en la calle o en una oficina ruidosa, los AirPods Pro 2 te brindan una experiencia auditiva inmersiva y sin distracciones.</p>
+            </div>
+        </div>
+        <div class="item reverse fade-in">
+            <img src="images/imagen2.jpeg" alt="Modo Transparencia" class="image">
+            <div class="text">
+                <h3>Modo Transparencia</h3>
+                <p>Escucha el mundo a tu alrededor cuando lo necesites.</p>
+                <p>El modo transparencia utiliza micrófonos externos para dejar pasar el sonido del entorno, permitiéndote escuchar lo que sucede a tu alrededor sin tener que quitarte los auriculares. Este modo es perfecto para situaciones donde necesitas estar atento, como cruzar la calle o escuchar un anuncio importante.</p>
+            </div>
+        </div>
+        <div class="item fade-in">
+            <img src="images/imagen3.jpeg" alt="Calidad de Sonido" class="image">
+            <div class="text">
+                <h3>Calidad de Sonido Inigualable</h3>
+                <p>Disfruta de cada detalle con un sonido superior.</p>
+                <p>Gracias a su diseño avanzado y a los controladores de alta excursión, los AirPods Pro 2 ofrecen una calidad de sonido excepcional con bajos profundos, medios claros y agudos nítidos. Cada nota y cada palabra se escuchan con claridad, ofreciendo una experiencia auditiva envolvente y detallada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="especificaciones" class="container">
+        <h2 class="fade-in">Especificaciones Técnicas</h2>
+        <div id="specs-container" class="fade-in">
+            <div class="spec-box">Autonomía: Hasta 24 horas con el estuche de carga.</div>
+            <div class="spec-box">Conectividad: Bluetooth 5.0.</div>
+            <div class="spec-box">Resistencia: Agua y polvo (IPX4).</div>
+            <div class="spec-box">Control de Cancelación Activa de Ruido y Modo Transparencia.</div>
+            <div class="spec-box">Diseño: In-Ear con ajuste personalizable.</div>
+            <div class="spec-box">Audio: Calidad de sonido de alta fidelidad con ecualización adaptativa.</div>
+            <div class="spec-box">Compatibilidad: iOS 14 o posterior, macOS Big Sur o posterior, y dispositivos Bluetooth.</div>
+        </div>
+    </section>
+
+    <section id="comprar" class="container">
+        <h2 class="fade-in">Compra Ahora</h2>
+        <form id="comprar-form" action="pago.html" method="GET">
+            <label for="modelo">Modelo:</label>
+            <select id="modelo" name="modelo">
+                <option value="airpods-pro-2">AirPods Pro 2</option>
+            </select>
+            
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="10">
+
+            <button type="submit">Comprar Ahora</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Apple Inc. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="#comprar" id="scroll-to-buy" class="button-fixed">Comprar Ahora</a>
+
+    <script src="script.js"></script>
+    <script>
+        // Intersection Observer para las animaciones de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // JavaScript para controlar la visibilidad del botón
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('scroll-to-buy');
+            const comprarSection = document.getElementById('comprar');
+
+            function handleScroll() {
+                const sectionTop = comprarSection.offsetTop;
+                const scrollPosition = window.scrollY + window.innerHeight;
+
+                if (scrollPosition < sectionTop) {
+                    button.classList.remove('hidden');
+                } else {
+                    button.classList.add('hidden');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Ejecutar al cargar la página
+        });
+    </script>
+</body>
+</html>
